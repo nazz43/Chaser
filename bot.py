@@ -576,7 +576,7 @@ async def show_products(message: types.Message, state: FSMContext):
 
     products = get_products(category, volume)
     if not products:
-        await message.answer("Товари відсутні", reply_markup=back_keyboard())
+        await message.answer("🚫🚫Немає в наявності🚫🚫", reply_markup=back_keyboard())
         return
 
     for product in products:
@@ -1001,12 +1001,12 @@ async def main():
 
 def add_test_data():
     # Додаємо тестові товари
-    liquid_10ml_id = add_product("рідина Chaser", "Фруктовий мікс", "10мл", 160)
+    liquid_10ml_id = add_product("рідина Chaser", "об'єм", "10мл", 160)
     if liquid_10ml_id:
         add_flavors(liquid_10ml_id,
                     "м'ята🍃,кавун ментол🍃🍉,вишня ментол🍒🍃,чорниця ментол🫐🍃,жовтий драгон фрукт💛🐲,жовта черешня🍒💛,Гранат🍅,Виноград🍇,Кавун🍉")
 
-    liquid_30ml_id = add_product("рідина Chaser", "Фруктовий мікс", "30мл", 300)
+    liquid_30ml_id = add_product("рідина Chaser", "об'єм", "30мл", 300)
     if liquid_30ml_id:
         add_flavors(liquid_30ml_id,
                     "Виноград🍇,Полуниця🍓,банан полуниця🍓🍌")
