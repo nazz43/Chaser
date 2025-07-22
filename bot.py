@@ -576,14 +576,14 @@ async def show_products(message: types.Message, state: FSMContext):
 
     products = get_products(category, volume)
     if not products:
-        await message.answer("Товари відсутні", reply_markup=back_keyboard())
+        await message.answer("🚫🚫Немає в наявності🚫🚫", reply_markup=back_keyboard())
         return
 
     for product in products:
         prod_id, name, prod_volume, price = product
         flavors = get_flavors(prod_id)
         if not flavors:
-            await message.answer("Смаки відсутні", reply_markup=back_keyboard())
+            await message.answer("🚫🚫Немає в наявності🚫🚫", reply_markup=back_keyboard())
             return
 
         keyboard = InlineKeyboardMarkup(inline_keyboard=[])
